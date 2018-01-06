@@ -1,0 +1,32 @@
+.elementor-editor-active {
+  .banner {
+    pointer-events: none;
+  }
+}
+
+// Like heart
+a.like-button {
+  vertical-align: middle;
+
+  svg {
+    width: 11px;
+    height: 11px;
+    fill: #ec6573 !important;
+  }
+
+  &:after {
+    font-size: 1em;
+    margin-left: 5px;
+  }
+}
+
+
+// TinyMce customization
+.block-gray {
+  background: #f5f5f5;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+}

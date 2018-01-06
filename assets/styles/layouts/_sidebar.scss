@@ -1,0 +1,70 @@
+.sidebar {
+
+  .content-wrapper {
+    background: #fff;
+    padding: 30px;
+    box-shadow: $wrapper-box-shadow;
+  }
+
+  .widget {
+    margin:0 0 40px;
+
+    .widget__title {
+      font-size: 1em;
+      margin: 0 0 20px;
+      text-align: center;
+      text-transform: uppercase;
+
+      &::before {
+        content: " ";
+        display: block;
+        position: relative;
+        border-bottom: 1px solid #eaeaea;
+        top: 7px;
+      }
+
+      span {
+        background: #fff;
+        position: relative;
+        z-index: 1;
+        padding: 2px 20px;
+      }
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+  }
+
+  .search-form {
+    position: relative;
+
+    label {
+      display: block;
+    }
+    .search-field {
+      display: block;
+      width: 100%;
+      height: 40px;
+      padding: 10px 40px 10px 10px;
+    }
+    .search-submit {
+      position: absolute;
+      right: 1px;
+      top: 1px;
+      border: none;
+      background: transparent;
+      padding: 10px 15px;
+    }
+  }
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) { }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) { }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { }

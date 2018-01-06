@@ -1,0 +1,29 @@
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .main {
+    @include make-sm-column($main-sm-columns);
+
+    .sidebar-primary & {
+      @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
+    }
+  }
+  .sidebar {
+    @include make-sm-column($sidebar-sm-columns);
+  }
+
+  .wrap {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .wrap {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) { }
