@@ -61,8 +61,9 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
 function init()
 {
-  add_rewrite_rule('^sw\.js?', '/wp-content/themes/reglissemyrtilles/dist/sw.js', 'top');
-  add_rewrite_rule('^pwa?', '/wp-content/themes/reglissemyrtilles/pwa.html', 'top');
+    add_rewrite_rule('^sw\.js?', '/wp-content/themes/reglissemyrtilles/dist/sw.js', 'top');
+    add_rewrite_rule('^workbox-sw\.prod\.v2\.1\.2\.js', '/wp-content/themes/reglissemyrtilles/dist/workbox-sw.prod.v2.1.2.js', 'top');
+    add_rewrite_rule('^workbox-sw\.prod\.v2\.1\.2\.js\.map', '/wp-content/themes/reglissemyrtilles/dist/workbox-sw.prod.v2.1.2.js.map', 'top');
 }
 add_action('init', __NAMESPACE__ . '\\init');
 

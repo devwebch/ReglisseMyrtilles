@@ -3,7 +3,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
+const workboxPlugin = require('workbox-webpack-plugin');
+const dist = 'dist';
 
 const extractSass = new ExtractTextPlugin({
     filename: "styles/[name].css",
@@ -19,7 +20,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        publicPath: "../",
+        publicPath: '/wp-content/themes/reglissemyrtilles/dist/',
         filename: "scripts/[name].js"
     },
     module: {
@@ -87,16 +88,38 @@ module.exports = {
             }
         }),
         new MinifyPlugin(),
-        new OfflinePlugin({
-          autoUpdate: 1000 * 20,
-          AppCache: null,
-          caches: {
-            'main': [
-              '/pwa'
-            ],
-            'additional': [],
-            'optional': [],
-          }
+        new workboxPlugin({
+            globDirectory: path.resolve(__dirname, "./dist/"),
+            globPatterns: ['**\/*.{html,js,css}'],
+            swDest: path.join(dist, 'sw.js'),
+            clientsClaim: true,
+            skipWaiting: true,
+            runtimeCaching: [
+                {
+                    urlPattern: /(.jpg$|.png$|.gif$)/,
+                    handler: 'cacheFirst',
+                    options: {
+                        cacheName: 'images-cache',
+                        cacheExpiration: {
+                            maxEntries: 10
+                        }
+                    }
+                },
+                {
+                    urlPattern: /\/$/,
+                    handler: 'networkFirst',
+                    options: {
+                        cacheName: 'page-cache',
+                        cacheExpiration: {
+                            maxEntries: 10
+                        }
+                    }
+                },
+                {
+                    urlPattern: new RegExp('(/wp-admin/|/wp-includes/)'),
+                    handler: 'networkOnly'
+                }
+            ]
         })
     ],
     externals: {
