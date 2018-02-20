@@ -108,7 +108,8 @@ module.exports = {
                     options: {
                         cacheName: 'page-cache',
                         cacheExpiration: {
-                            maxEntries: 10
+                            maxEntries: 10,
+                            maxAgeSeconds: 24 * 60 * 60
                         }
                     }
                 },
