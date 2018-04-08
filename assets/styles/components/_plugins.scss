@@ -20,6 +20,24 @@ a.like-button {
   }
 }
 
+// Popular Posts
+.widget.popular-posts {
+  ul {
+    padding: 0;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  .wpp-thumbnail {
+    margin: 0;
+    padding: 0;
+  }
+  .wpp-post-title {
+    display: block;
+    padding-left: 50px;
+  }
+}
 
 // TinyMce customization
 .block-gray {
