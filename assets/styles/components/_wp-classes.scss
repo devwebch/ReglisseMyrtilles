@@ -12,11 +12,13 @@
   display: block;
   margin: ($line-height-computed / 2) auto;
   height: auto;
+  max-width: 100%;
 }
 .alignleft,
 .alignright {
   margin-bottom: ($line-height-computed / 2);
   height: auto;
+  max-width: 100%;
 }
 
 // Gallery
