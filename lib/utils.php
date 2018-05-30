@@ -102,3 +102,11 @@ function pagination( $args = array() ) {
     if ( isset($echo) )
         echo $args['before_output'] . $echo . $args['after_output'];
 }
+
+function get_raw_excerpt()
+{
+    $split_excerpt = explode('&hellip;', get_the_excerpt());
+    $split_excerpt = trim($split_excerpt[0]);
+
+    return $split_excerpt;
+}
