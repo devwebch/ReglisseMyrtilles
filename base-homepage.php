@@ -27,6 +27,7 @@ use Roots\Sage\Wrapper;
         <?php endif; ?>
       </div><!-- /.content -->
     </div><!-- /.wrap -->
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"7c48d0e8aa4fdcfb3fd2568b4","lid":"0957467ff4"}) })</script>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
